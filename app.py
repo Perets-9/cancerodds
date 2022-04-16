@@ -1,13 +1,15 @@
 from email.mime import image
 import streamlit as slt
 import pandas as pd
+import os
+import pickle
 from PIL import Image
 from math import exp, tanh
 from tokenize import Exponent
 
 
 image = Image.open(r'C:\\Users\\USER\\Documents\\lord\\Image1.jpg')
-slt.image(image, caption = 'Cancercarer')
+slt.image(image, caption = 'Cancertracer')
 slt.title('Breast Cancer Detection App')
 slt.subheader('This prediction was made using the UCI Wisconsin Machine Learning Repository dataset. The digitalized image of a fine needle aspiration of biopsied cell nuclei was used to set the value of the observed attribute to view the likely classification - given the 661 prior cases')
 
