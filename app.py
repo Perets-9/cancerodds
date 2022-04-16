@@ -1,5 +1,7 @@
+from email.mime import image
 import streamlit as slt
 import pandas as pd
+from PIL import Image
 from math import exp, tanh
 from tokenize import Exponent
 
