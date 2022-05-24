@@ -7,8 +7,6 @@ import pickle
 from PIL import Image
 from math import exp, tanh
 from tokenize import Exponent
-import colorama
-from colorama import init, Fore, Back, Style
 
 image = Image.open('Image1.jpg')
 slt.image(image, caption='digitized histopathological images of fine-needle aspiration (FNA) biopsy')
