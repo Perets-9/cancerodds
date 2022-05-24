@@ -1,4 +1,5 @@
 from email.mime import image
+from lib2to3.pgen2 import pgen
 import streamlit as slt
 import pandas as pd
 import os
@@ -6,10 +7,15 @@ import pickle
 from PIL import Image
 from math import exp, tanh
 from tokenize import Exponent
+import colorama
+from colorama import init, Fore, Back, Style
 
+image = Image.open('Image1.jpg')
+slt.image(image, caption='digitized histopathological images of fine-needle aspiration (FNA) biopsy')
 
 slt.title('Breast Cancer Detection App')
 slt.subheader('This prediction was made using the UCI Wisconsin Machine Learning Repository dataset. The digitalized image of a fine needle aspiration of biopsied cell nuclei was used to set the value of the observed attribute to view the likely classification - given the 661 prior cases')
+slt.write('Made by Tatap Perets')
 
 clump_thickness = int(slt.slider('clump thickness', 1, 10))
 cell_size_uniformity = int(slt.slider('cell size uniformity', 1, 10))
@@ -57,6 +63,12 @@ probabilistic_layer_combinations_0 = -0.0355815 +(0.58858 * perceptron_layer_1_o
 diagnose = 1.0/(1.0 + (-exp(probabilistic_layer_combinations_0)));
 
 if diagnose > 0.5:
-    slt.header('The  tumor is most likely non-cancerous')
-else:
-    slt.header('The tumor is most likely cancerous')
+    nested_btn = slt.button("Get the prediction results")
+    if nested_btn:
+           slt.header("The tumor is most likely benign")
+        
+if diagnose < 0.5:
+    nested_btn = slt.button("Get the prediction results")
+    if nested_btn:
+          slt.header("The tumor is most likely malignant")
+   
