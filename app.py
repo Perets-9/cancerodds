@@ -1,5 +1,4 @@
 from email.mime import image
-from lib2to3.pgen2 import pgen
 import streamlit as slt
 import pandas as pd
 import os
@@ -33,7 +32,6 @@ data = {'clump thickness': clump_thickness,
         'bland chromatin': bland_chromatin,
         'normal nucleoli': normal_nucleoli,
         'mitoses': mitoses}
-
 
 scaled_clump_thickness = (int(clump_thickness)-4.442170143)/2.818700075
 scaled_cell_size_uniformity = (int(cell_size_uniformity)-3.150810003)/3.062900066
