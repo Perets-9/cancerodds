@@ -14,6 +14,9 @@ slt.title('Breast Cancer Detection App')
 slt.subheader('This prediction was made using the UCI Wisconsin Machine Learning Repository dataset. The digitalized image of a fine needle aspiration of biopsied cell nuclei was used to set the value of the observed attribute to view the likely classification - given the 661 prior cases')
 slt.write('Made by Tatap Perets')
 
+
+
+
 clump_thickness = int(slt.slider('clump thickness', 1, 10))
 cell_size_uniformity = int(slt.slider('cell size uniformity', 1, 10))
 cell_shape_uniformity = int(slt.slider('cell shape uniformity', 1, 10))
